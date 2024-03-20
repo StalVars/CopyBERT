@@ -5,9 +5,8 @@ import sys
 import torch
 import copy
 
-sys.path.append("/raid/data/stva02/qgen_demo")
-sys.path.append("/raid/data/stva02/qgen_demo/pytorch-pretrained-BERT_older")
-sys.path.append("/raid/data/stva02/qgen_demo/pytorch-pretrained-BERT_older/examples")
+sys.path.append("pytorch-pretrained-BERT_older/examples/") 
+sys.path.append("pytorch-pretrained-BERT_older/") 
 
 from examples.run_squad_qgen_generate import BertQGEN
 
