@@ -1,2 +1,3 @@
 spacy
-transformers
+torch==1.13.1
+transformers==4.18.0
