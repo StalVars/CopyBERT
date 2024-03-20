@@ -13,8 +13,8 @@ from examples.run_squad_qgen_generate import BertQGEN
 
 class QGenResource:
     
-    def __init__(self):
-        self.bertqgen = BertQGEN()
+    def __init__(self, model_name):
+        self.bertqgen = BertQGEN(model_name)
     
     def on_post(self, req, resp):
         body = req.stream.read()

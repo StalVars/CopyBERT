@@ -1577,18 +1577,20 @@ class BertQGEN(object):
    For examples without an answer, the start and end position are -1.
    """
 
-   def __init__(self):
+   def __init__(self, model_name):
 
-        bert_model="pytorch-pretrained-BERT_older/qgen_model/"
+        #bert_model="pytorch-pretrained-BERT_older/qgen_model/"
+        bert_model=model_name 
         local_rank=-1
         self.model = BertForQuestionGeneration.from_pretrained(bert_model,
                 cache_dir=os.path.join(str(PYTORCH_PRETRAINED_BERT_CACHE), 'distributed_{}'.format(local_rank)))
         self.tokenizer = BertTokenizer.from_pretrained(bert_model, do_lower_case=False)
-        self.qamodel = BertForQuestionAnswering.from_pretrained("pytorch-pretrained-BERT_older/outputdir_squad2.0_bert-base-cased")
+        #self.qamodel = BertForQuestionAnswering.from_pretrained("pytorch-pretrained-BERT_older/outputdir_squad2.0_bert-base-cased")
+        self.qamodel=None
         self.align = Align()
         self.qlm_model = None
         self.model.cuda()
-        self.qamodel.cuda()
+        #self.qamodel.cuda()
 
    def __str__(self):
         return self.__repr__()

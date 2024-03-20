@@ -8,9 +8,10 @@
 import re
 from difflib import SequenceMatcher
 from nltk import metrics
-from pytorch_pretrained_bert import BertTokenizer
-#berttokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
-berttokenizer = BertTokenizer.from_pretrained('/raid/data/stva02/saved_bert_models/saved-bert-base-cased')
+#from pytorch_pretrained_bert import BertTokenizer
+from transformers import BertTokenizer
+berttokenizer = BertTokenizer.from_pretrained('bert-large-cased')
+#berttokenizer = BertTokenizer.from_pretrained('/raid/data/stva02/saved_bert_models/saved-bert-base-cased')
 
 
 class AlignTokenizations:
