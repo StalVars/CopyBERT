@@ -3,7 +3,7 @@
 import json
 import sys
 
-sys.path.append("/raid/data/stva02/qgen_demo")
+sys.path.append("./qgen_app/")
 
 import identifyphrases
 
