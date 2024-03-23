@@ -22,8 +22,13 @@ bash qg_scripts/run_qg.sh models/baseline bert-large-cased 10000 0 1 3e-5 -e --t
 
 #Demo Server  
 
-The following falcon server takes a passage and generates question, returns it to the client process '''
+The following falcon server takes a passage and generates question and answers, returns it to the client process '''
 
 ```sh
-bash qg_scripts/generate_q.sh models/yahoo-nonfactoid bert-large-cased 10000 0 1 3e-5 -e --train_file data/yahoo-non-factoid/nfL6.train.squad.json --do_predict --predict_file ./data/yahoo-non-factoid/nfL6.dev.squad.json --bert_model models/yahoo-nonfactoid-bert-large-cased/ 
+python qgen_app/app.py
+```
+
+curl command to invoke the server:
+```sh
+url --header "Content-Type: application/json" --request POST --data '{"question": "When was the car invented?","text": "Cars came into global use during the 20th century, and developed economies depend on them. The year 1886 is regarded as the birth year of the modern car when German inventor Karl Benz patented his Benz Patent-Motorwagen. Cars became widely available in the early 20th century. One of the first cars accessible to the masses was the 1908 Model T, an American car manufactured by the Ford Motor Company. Cars were rapidly adopted in the US, where they replaced animal-drawn carriages and carts, but took much longer to be accepted in Western Europe and other parts of the world."}' http://localhost:1223/qgennphr
 ```
