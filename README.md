@@ -1,9 +1,11 @@
 
-# Installation
+# Env 
+```sh
 conda create -n copybert python=3.9
 conda activate copybert
 pip -r requirements.txt
 python -m spacy download en_core_web_sm
+```
 
 
 
